@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">11.AcdHmwAnimation_RecycleView_CardView</string>
+    
+    <string name="transition_container">transition_container</string>
+    <string name="transition_image">transition_image</string>
+    <string name="transition_title">transition_title</string>
+    <string name="transition_capital">transition_capital</string>
+
+</resources>
