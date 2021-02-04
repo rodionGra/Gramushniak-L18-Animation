@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SharedSecondaryActivity"
-    android:background="#FFDEAD">
+    android:background="@color/background_color_activity_detail_info">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="@dimen/activity_shered_secondary_tv_title_textSize"
         android:transitionName="@string/transition_title"
         app:layout_constraintBottom_toTopOf="@+id/iv_flag"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,8 +23,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_flag"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/activity_shered_secondary_iv_flag_layout_width"
+        android:layout_height="@dimen/activity_shered_secondary_iv_flag_layout_height"
         android:scaleType="fitCenter"
         android:transitionName="@string/transition_image"
         app:layout_constraintBottom_toTopOf="@id/tv_capital"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="@dimen/activity_shered_secondary_tv_capital_textSize"
         android:transitionName="@string/transition_capital"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setupBinding()
-        setupListeners()
         setupRecycleView()
     }
 
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private val adapter: RecycleViewAdapter = RecycleViewAdapter()
+    private val adapter: RecycleViewAdapter = RecycleViewAdapter(Country.listOfCountry)
     private fun setupRecycleView() {
         adapter.callback = { viewFlag, viewTitle, viewCapital, country ->
             val pairImage = Pair(
@@ -47,50 +46,17 @@ class MainActivity : AppCompatActivity() {
                 pairDesc
             )
             val intent = Intent(this, SharedSecondaryActivity::class.java)
-            intent.putExtra(COUNTRY_FLAG, country)
+            intent.putExtra(COUNTRY_INTENT, country)
             startActivity(intent, activityOptions.toBundle())
         }
-        binding.recycleView.layoutManager = LinearLayoutManager(
-            this,
-            LinearLayoutManager.VERTICAL,
-            false
-        )
-
-        adapter.list = Country.listOfCountry
-        binding.recycleView.adapter = adapter
+        binding.apply {
+            recycleView.layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+            recycleView.adapter = adapter
+        }
     }
-
-    private fun setupListeners() {
-
-    }
-
-    /*TODO CLEAN UP
-    private fun startSecondaryActivity() {
-        val intent = Intent(this, SharedSecondaryActivity::class.java)
-        val pairImage = Pair<View, String>(
-            binding.ivFlag,
-            resources.getString(R.string.transition_image)
-        ).toAndroidPair()
-        val pairTitle = Pair<View, String>(
-            binding.tvTitle,
-            resources.getString(R.string.transition_title)
-        ).toAndroidPair()
-        val pairDesc = Pair<View, String>(
-            binding.tvCapital,
-            resources.getString(R.string.transition_capital)
-        ).toAndroidPair()
-        val pairBack = Pair<View, String>(
-            binding.cardView,
-            resources.getString(R.string.transition_container)
-        ).toAndroidPair()
-        val activityOptions = ActivityOptions.makeSceneTransitionAnimation(
-            this,
-            pairImage,
-            pairTitle,
-            pairDesc,
-            pairBack
-        )
-        startActivity (intent, activityOptions.toBundle())
-    }*/
 
 }

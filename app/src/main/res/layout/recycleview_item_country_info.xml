@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginVertical="8dp">
-
-    <!--TODO
-    android:clickable="true"
-    android:onClick="animateIntent"
-    android:transitionName="@string/transition_container"
-    android:focusable="true"
-    -->
+    android:layout_height="@dimen/recycleview_item_cardView_layout_height"
+    android:layout_marginVertical="@dimen/recycleview_item_iv_cardView_marginVertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,8 +13,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_flag"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/recycleview_item_iv_flag_layout_width"
+            android:layout_height="@dimen/recycleview_item_iv_flag_layout_height"
             android:scaleType="fitCenter"
             tools:src="@drawable/spain_flag"
             android:transitionName="@string/transition_image"
@@ -33,10 +26,10 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/recycleview_item_tv_title_marginStart"
             tools:text="Spain"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="@dimen/recycleview_item_tv_title_textSize"
             android:transitionName="@string/transition_title"
             app:layout_constraintStart_toEndOf="@id/iv_flag"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,11 +38,11 @@
             android:id="@+id/tv_capital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="@dimen/recycleview_item_tv_capital_marginStart"
+            android:layout_marginBottom="@dimen/recycleview_item_tv_capital_marginBottom"
             tools:text="Madrid"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="@dimen/recycleview_item_tv_capital_textSize"
             android:transitionName="@string/transition_capital"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_flag" />
