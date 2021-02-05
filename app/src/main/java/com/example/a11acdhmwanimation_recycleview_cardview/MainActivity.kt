@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private val adapter: RecycleViewAdapter = RecycleViewAdapter(Country.listOfCountry)
+    private val adapterCountry: CountryRecycleViewAdapter = CountryRecycleViewAdapter(Country.listOfCountry)
     private fun setupRecycleView() {
-        adapter.callback = { viewFlag, viewTitle, viewCapital, country ->
+        adapterCountry.callback = { viewFlag, viewTitle, viewCapital, country ->
             val pairImage = Pair(
                 viewFlag,
                 resources.getString(R.string.transition_image)
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 LinearLayoutManager.VERTICAL,
                 false
             )
-            recycleView.adapter = adapter
+            recycleView.adapter = adapterCountry
         }
     }
 
